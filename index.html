@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Guess Game</title>
+
+    <!--Linking stylesheets-->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <link
+      rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container card">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="game-info">
+            <!--Press any key to get started!-->
+            <ul>
+                <li>
+                    <i class="fas fa-sort-alpha-down"></i>
+                    <h1>Press any key to get started!</h1>
+                </li>
+            </ul>
+
+            <h3>Wins:</h3>
+            <div id="wins"></div>
+
+            <h3>Current Word:</h3>
+            <div id="currentWord"></div>
+
+            <h3>Number of Guesses Remaining:</h3>
+            <div id="guessRemaining"></div>
+
+            <h3>Letters already guessed:</h3>
+            <div id="lettersGuessed"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Linking Javascript-->
+    <script src="assets/javascript/game.js"></script>
+  </body>
 </html>
