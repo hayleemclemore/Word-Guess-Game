@@ -7,6 +7,8 @@ body {
 
     font-family:Montserrat,Roboto,"Helvetica Neue";
     text-align: center;
+    background-color: linear-gradient(135deg,#fff,hsla(0,0%,100%,0) 0,#edeff1);
+    /* background: linear-gradient(135deg,#26a17c,#38a76d); */
 
 }
 
@@ -19,7 +21,7 @@ h1 {
 }
 
 h3 {
-    margin: 50px 0;
+    margin: 20px 0;
     font-size: 20px;
     font-weight:300;
 }
@@ -51,7 +53,8 @@ li {
     overflow: hidden;
     padding: 25px;
     color: #fff;
-    background: var(--green) 50%;
+    background: linear-gradient(135deg,#26a17c,#38a76d);
+    /* background: var(--green) 50%; */
     background-size: cover;
     border-radius: 5px;
     box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
@@ -59,7 +62,7 @@ li {
 }
 
 
-.card:before {
+/* .card:before {
     content: "";
     position: absolute;
     top: 0;
@@ -67,11 +70,10 @@ li {
     bottom: 0;
     left: 0;
     display: block;
-    background: linear-gradient(135deg,#26a17c,#38a76d);
-    border-radius: 5px;
+    /* background: linear-gradient(135deg,#26a17c,#38a76d); */
+    /* border-radius: 5px;
     -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-}
+    backdrop-filter: blur(2px); } */
 
 .game-info {
     text-align: center;

@@ -8,10 +8,15 @@
     <!--Linking stylesheets-->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
     <link
-      rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-      crossorigin="anonymous"/>
-      <script src="https://kit.fontawesome.com/d6140523cb.js" crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/d6140523cb.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   </head>
   <body>
@@ -21,29 +26,40 @@
           <div class="game-info">
             <!--Press any key to get started!-->
             <ul>
-                <li>
-                    <i class="fas fa-sort-alpha-down"></i>
-                    <h1>Press any key to get started!</h1>
-                </li>
+              <li>
+                <i class="fas fa-sort-alpha-down"></i>
+                <h1>Press any key to get started!</h1>
+                <h2>Your guess: <span id="user-text"><strong>...Nothing.</strong></span></h2>
+              </li>
+              <li>
+                <h3>Wins:</h3>
+                <div id="wins"><p>0</p></div>
+              </li>
+              <li>
+                <h3>Current Word:</h3>
+                <div id="currentWord"></div>
+              </li>
+              <li>
+                <h3>Number of Guesses Remaining:</h3>
+                <div id="guessRemaining"></div>
+              </li>
+              <li>
+                <h3>Letters already guessed:</h3>
+                <div id="lettersGuessed"></div>
+              </li>
             </ul>
-
-            <h3>Wins:</h3>
-            <div id="wins"></div>
-
-            <h3>Current Word:</h3>
-            <div id="currentWord"></div>
-
-            <h3>Number of Guesses Remaining:</h3>
-            <div id="guessRemaining"></div>
-
-            <h3>Letters already guessed:</h3>
-            <div id="lettersGuessed"></div>
           </div>
         </div>
       </div>
     </div>
 
     <!--Linking Javascript-->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
+
+    
   </body>
 </html>
