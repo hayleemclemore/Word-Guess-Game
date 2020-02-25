@@ -1,15 +1,7 @@
 
-// var maxGuesses = 13;
-// var wins = 0;
-// var letters = /^[A-Za-z]+$/;
-// var letterGuessed = "";
-// var wordGuessed = "";
-
-
-
 $(document).ready(function() {
-  // This is our starting myFarm array.
-  var wordList = ["madonna", "computer", "oranges", "snow", "pizza", "sidewalk", "horse"];
+  // This is our starting wordList array.
+  var wordList = ["random", "computer", "oranges", "snow", "document", "sidewalk", "horse"];
   var randomWord = null;
   var lettersofTheWord =[];
   var matchedLetters = [];
@@ -26,6 +18,7 @@ $(document).ready(function() {
     buildWord();
     handleGuess();
   }
+
   function buildWord(){
     var view = "";
     for(var i=0; i<lettersofTheWord.length;i++){
@@ -38,11 +31,14 @@ $(document).ready(function() {
     }
     document.querySelector("#currentWord").innerHTML = view;
   }
+
+
   function handleGuess(){
-    totalGuesses = 13;
-    guessesLeft = 13;
+    totalGuesses = 5;
+    guessesLeft = 5;
     document.querySelector("#guessRemaining").innerHTML = guessesLeft;
   }
+
   function updatePage(letter){
     if(guessesLeft === 0){
       restartGame();
@@ -53,14 +49,18 @@ $(document).ready(function() {
       buildWord()
     }
   }
+
+
   function updateGuesses(letter){
     if((guessedLetters.indexOf(letter) === -1) && (lettersofTheWord.indexOf(letter) === -1)){
       guessedLetters.push(letter);
       guessesLeft--;
       document.querySelector("#guessRemaining").innerHTML = guessesLeft;
       document.querySelector("#lettersGuessed").innerHTML = guessedLetters.join(", ");
+      
     }
   }
+
   function updateMatchedLetters(letter){
     for(var i=0; i<lettersofTheWord.length; i++){
       if((letter === lettersofTheWord[i]) && (matchedLetters.indexOf(letter) === -1)){
@@ -70,61 +70,83 @@ $(document).ready(function() {
   }
 
 
+  // if matched letters = letters of the word, wins++ and restart game
+  // function updateWins(){
+  //   if((letter === lettersofTheWord[i]) && (matchedLetters.indexOf(letter) !== -1)){
+  //     wins++;
+  //     console.log(wins);
+  //     restartGame();
+  //   }
+  //   else {
+  //     updatePage(letter)
+  //   }
+  // }
 
 
 
+function restartGame() {
+
+  randomWord = null;
+  lettersofTheWord =[];
+  matchedLetters = [];
+  guessedLetters = [];
+  letterGuessed = [];
+  totalGuesses = 0;
+  letter = null;
+  guessesLeft = 0;
+
+  start();
+
+}
+
+
+  
+var randomArray = [];
+ 
   start();
   document.onkeyup = function(event) {
     if(event.keyCode >=49 && event.keyCode <= 90){
       letterGuessed = event.key.toLowerCase();
       console.log(letterGuessed)
       updatePage(letterGuessed);
-
     }
-   
-  };
+    for(var i=0; i<lettersofTheWord.length;i++){
+      if (matchedLetters[i] === lettersofTheWord[i]){
+        randomArray.push(lettersofTheWord[i])
+        console.log(matchedLetters.length)
 
+      }
 
+        
 
-    // for (var i = 0; i < wordList[i].length; i++){
-     
+        // if (matchedLetters === lettersofTheWord) {
+        //   wins++;
+        //   console.log(wins);
+        //   }
+        // else {
+        //   console.log("you did not win");
+        //   console.log(matchedLetters);
+        // }
 
+      }
+
+      if(lettersofTheWord.length == matchedLetters.length) {
+        console.log("you win!");
+        wins++;
+        console.log(wins);
+        document.querySelector("#wins").innerHTML = wins;
+        restartGame();
+      }
+  
+    }
     
-    // };
-
-    //Adding spaces for the current Word to game card 
-    // var spaces = document.getElementById("currentWord");
-    // var text = document.createTextNode(newStr);
-    // spaces.appendChild(text);
-
-    // //Displaying number of wins
 
 
-
-    // var userText = document.getElementById("user-text");
-
-    //   // Next, we give JavaScript a function to execute when onkeyup event fires.
-      
-
-    // var lettersGuessed = document.getElementById("lettersGuessed");
-
-    //   // Next, we give JavaScript a function to execute when onkeyup event fires.
-    //   document.onkeyup = function(event) {
-    //     lettersGuessed.textContent = event.key;
-    //   };
-
-
-    //   updateInformation ()
-
-
-    //   function updateInformation () {
-
-    //     var lettersGuessed = document.getElementById("lettersGuessed");
-
-    //   }
 });
 
 
 
 
 
+// if((letter === lettersofTheWord[i]) && (matchedLetters.indexOf(letter) !== -1)){
+//   ));
